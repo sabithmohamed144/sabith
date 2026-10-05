@@ -4,9 +4,7 @@
   "description": "Portfolio of Mohamed Sabith — AI & Data Science Graduate",
   "main": "index.html",
   "scripts": {
-    "start": "python serve.py",
-    "serve": "python serve.py",
-    "build": "python build_site.py"
+    "start": "python serve.py"
   },
   "keywords": [
     "portfolio",

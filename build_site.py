@@ -2,7 +2,7 @@ import os
 import re
 import shutil
 
-BASE_DIR = r"c:\Users\acer\Documents\Custom Office Templates\mohamedsabith.portfolio.com"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
 IMG_DIR = os.path.join(BASE_DIR, "img")
 
