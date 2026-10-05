@@ -15,25 +15,13 @@ with open(os.path.join(BASE_DIR, "favicon.svg"), "w", encoding="utf-8") as f:
     f.write(favicon_svg)
 print("Created favicon.svg")
 
-# 2. Patch OptimizedImage-DBAtxuaH.js to return clean local image paths
+# 2. Write clean OptimizedImage-DBAtxuaH.js
 opt_img_path = os.path.join(ASSETS_DIR, "OptimizedImage-DBAtxuaH.js")
-if os.path.exists(opt_img_path):
-    with open(opt_img_path, "r", encoding="utf-8") as f:
-        content = f.read()
-    # Replace o function and l function
-    patched = re.sub(
-        r'function o\(n,\{[^}]*\}\=\{[^}]*\}\{[^}]*\}',
-        'function o(n){return n}',
-        content
-    )
-    patched = re.sub(
-        r'function l\(n,a,r\)\{[^}]*\}',
-        'function l(n){return n}',
-        patched
-    )
-    with open(opt_img_path, "w", encoding="utf-8") as f:
-        f.write(patched)
-    print("Patched OptimizedImage-DBAtxuaH.js")
+opt_img_code = 'import{j as h,i as m}from"./index-Dp5s20_x.js";function o(n){return n}function l(n){return n}function S({src:n,alt:a,width:r,height:t,sizes:i,aspect:e,widths:c=[400,640,960,1280],priority:f=!1,className:g}){const s=c[Math.min(1,c.length-1)],u=e??r/t;return h.jsx("img",{src:n,srcSet:n,sizes:i,alt:a,width:Math.round(1e3*u),height:1e3,loading:f?"eager":"lazy",fetchPriority:f?"high":"auto",decoding:"async",className:m("block h-auto w-full bg-paper-deep object-cover",g)})}export{S as O,o as c,l as s};'
+with open(opt_img_path, "w", encoding="utf-8") as f:
+    f.write(opt_img_code)
+print("Wrote clean OptimizedImage-DBAtxuaH.js")
+
 
 # 3. Create assets/portfolio.js
 portfolio_js = '''// Mohamed Sabith Portfolio - Interactive Enhancements
