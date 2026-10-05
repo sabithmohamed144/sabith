@@ -1,0 +1,20 @@
+{
+  "name": "mohamedsabith.portfolio.com",
+  "version": "1.0.0",
+  "description": "Portfolio of Mohamed Sabith — AI & Data Science Graduate",
+  "main": "index.html",
+  "scripts": {
+    "start": "python serve.py",
+    "serve": "python serve.py",
+    "build": "python build_site.py"
+  },
+  "keywords": [
+    "portfolio",
+    "data-science",
+    "machine-learning",
+    "explainable-ai",
+    "mohamed-sabith"
+  ],
+  "author": "Mohamed Sabith",
+  "license": "MIT"
+}
