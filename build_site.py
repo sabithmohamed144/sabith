@@ -436,7 +436,8 @@ files_to_clean = [
     "about.html",
     "gallery.html",
     "projects_ecg-stress-xai.html",
-    "projects_house-price-regression.html"
+    "projects_house-price-regression.html",
+    "projects_payment-fraud-detection.html"
 ]
 
 for fname in files_to_clean:
@@ -534,7 +535,8 @@ routes_map = {
     "about": "about.html",
     "contact": "contact.html",
     os.path.join("projects", "ecg-stress-xai"): "projects_ecg-stress-xai.html",
-    os.path.join("projects", "house-price-regression"): "projects_house-price-regression.html"
+    os.path.join("projects", "house-price-regression"): "projects_house-price-regression.html",
+    os.path.join("projects", "payment-fraud-detection"): "projects_payment-fraud-detection.html"
 }
 
 for route_dir, src_file in routes_map.items():
