@@ -17,7 +17,8 @@ for r, d, fs in os.walk(base):
                 if src.startswith('http'):
                     continue
                 scanned_assets.add(src)
-                if not os.path.exists(os.path.join(base, src.lstrip('/'))):
+                clean_path = src.split('?')[0].lstrip('/')
+                if not os.path.exists(os.path.join(base, clean_path)):
                     broken_assets.append(('script', src, os.path.relpath(p, base)))
 
             # Find all link href (css)
@@ -25,7 +26,8 @@ for r, d, fs in os.walk(base):
                 if href.startswith('http') or href.startswith('data:'):
                     continue
                 scanned_assets.add(href)
-                if not os.path.exists(os.path.join(base, href.lstrip('/'))):
+                clean_path = href.split('?')[0].lstrip('/')
+                if not os.path.exists(os.path.join(base, clean_path)):
                     broken_assets.append(('link', href, os.path.relpath(p, base)))
 
 print("Scanned local script and css assets:")
